@@ -6,6 +6,7 @@ import { RegisterComponent } from './register/register.component';
 import { AboutComponent } from './about/about.component';
 import { EditComponent } from './edit/edit.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AuthGuardService } from './services/Auth/auth-guard.service';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -13,9 +14,8 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'edit', component: EditComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  // { path: 'home', component: HomeComponent },
+  { path: 'edit', component: EditComponent, canActivate:[AuthGuardService]},
+  { path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuardService] },
   // { path: 'home', component: HomeComponent },
 
 

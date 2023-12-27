@@ -7,6 +7,8 @@ import { Injectable } from '@angular/core';
 })
 export class AuthHandlerService {
 
+
+
   constructor(private authService: AuthService) { }
 
   // login(email: string, password: string) {
@@ -16,11 +18,17 @@ export class AuthHandlerService {
   simulateLogin(email: string, password: string): Observable<any> {
     // Simular verificação de credenciais
     if (email === 'teste@email.com' && password === 'senha123') {
-      return of({ token: 'token_simulado' });
+      const simulatedToken = 'token_simulado';
+      localStorage.setItem('token', simulatedToken);
+      return of({ token: simulatedToken });
     } else {
       // Credenciais inválidas
       return of({ error: 'Credenciais inválidas' });
     }
+  }
+
+  isLoggedIn(): boolean{
+    return !!localStorage.getItem('token');
   }
 
 }

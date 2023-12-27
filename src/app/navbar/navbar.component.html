@@ -1,10 +1,13 @@
 <nav class="navbar text-center">
   <ul class="nav-list">
-    <li><a routerLink="/home">Home</a></li>
-    <li><a routerLink="/about">About</a></li>
-    <li><a routerLink="/login">Login</a></li>
-    <li><a routerLink="/register">Register</a></li>
-    <li><a routerLink="/dashboard">Dashboard</a></li>
-    <li><button (click)="logout()">Logout</button></li>
+    <li><a style="font-weight: bolder;"  routerLink="/home">Home</a></li>
+    <li><a style="font-weight: bolder;" routerLink="/about">About</a></li>
+
+    <li *ngIf="!isLoggedIn()"><a style="font-weight: bolder;" routerLink="/login">Login</a></li>
+    <li *ngIf="!isLoggedIn()"><a style="font-weight: bolder;" routerLink="/register">Register</a></li>
+    <li *ngIf="isLoggedIn()"><a style="font-weight: bolder;" routerLink="/dashboard">Dashboard</a></li>
+    <li *ngIf="isLoggedIn()"><a style="font-weight: bolder;" routerLink="/edit">Editar dados</a></li>
+
+    <li *ngIf="isLoggedIn()"><button type="button" class="btn btn-light" style="font-weight: bolder;" (click)="logout()">Logout</button></li>
   </ul>
 </nav>
