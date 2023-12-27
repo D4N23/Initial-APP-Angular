@@ -15,4 +15,10 @@ export class AuthService {
       const credentials = {email, password};
       return this.http.post(`${this.apiUrl}/login`, credentials);
     }
+
+    logout(): void{
+      //limpa o token do usuario
+      localStorage.removeItem('token');
+
+    }
 }
