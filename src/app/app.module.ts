@@ -5,6 +5,8 @@ import { RouterModule, RouterOutlet } from "@angular/router";
 import { BrowserModule } from "@angular/platform-browser";
 import { routes } from "./app.routes";
 import { NavbarComponent } from "./navbar/navbar.component";
+import { LoginModule } from "./login/login.module";
+import { HttpClientModule } from "@angular/common/http";
 
 
 @NgModule({
@@ -16,7 +18,8 @@ import { NavbarComponent } from "./navbar/navbar.component";
   imports: [
     BrowserModule,
     CommonModule,
-    // RouterOutle,
+    HttpClientModule,
+    LoginModule,
     RouterModule.forRoot(routes),
 
   ],
@@ -24,7 +27,7 @@ import { NavbarComponent } from "./navbar/navbar.component";
     AppComponent
   ],
   exports:[
-    CommonModule
+
   ]
 })
 
