@@ -1,18 +1,24 @@
 import { NgModule } from "@angular/core";
 import { AppComponent } from "./app.component";
 import { CommonModule } from "@angular/common";
-import { RouterOutlet } from "@angular/router";
+import { RouterModule, RouterOutlet } from "@angular/router";
 import { BrowserModule } from "@angular/platform-browser";
+import { routes } from "./app.routes";
+import { NavbarComponent } from "./navbar/navbar.component";
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent
+
   ],
   imports: [
     BrowserModule,
     CommonModule,
-    RouterOutlet
+    // RouterOutle,
+    RouterModule.forRoot(routes),
+
   ],
   bootstrap:[
     AppComponent
