@@ -1,14 +1,14 @@
 <div class="container main mt-4 text-center">
   <div class="container card login">
     <div class="card-body">
-      <form>
+      <form (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="usuario">E-mail</label>
-          <input id="email" type="email" class="form-control" />
+          <input id="email" type="email" class="form-control" [(ngModel)]="email" name="email" required/>
         </div>
         <div class="form-group">
           <label for="password">Senha</label>
-          <input type="password" class="form-control" id="password" />
+          <input type="password" class="form-control" id="password" [(ngModel)]="password" required />
         </div>
         <button type="submit" class="btn btn-primary">Entrar</button>
       </form>
