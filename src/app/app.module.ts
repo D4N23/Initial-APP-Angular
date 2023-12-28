@@ -7,12 +7,15 @@ import { routes } from "./app.routes";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { LoginModule } from "./login/login.module";
 import { HttpClientModule } from "@angular/common/http";
+import { ChartModule } from "angular2-chartjs";
+import { RegisterComponent } from "./register/register.component";
+import { FormsModule } from "@angular/forms";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
 
   ],
   imports: [
@@ -20,7 +23,10 @@ import { HttpClientModule } from "@angular/common/http";
     CommonModule,
     HttpClientModule,
     LoginModule,
+    FormsModule,
+    // ChartModule,
     RouterModule.forRoot(routes),
+
 
   ],
   bootstrap:[
