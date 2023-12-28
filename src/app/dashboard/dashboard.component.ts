@@ -1,70 +1,28 @@
+import { NgFor } from '@angular/common';
+import { GetService } from './../services/get/get.service';
 import { Component, OnInit } from '@angular/core';
 import { Chart, ChartOptions } from 'chart.js';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [],
-  // template: `
-  //   <div class="row">
-  //     <div class="col-md-12">
-  //       <div class="card">
-  //         <div class="card-header">
-  //           <h5 class="card-title">Users Behavior</h5>
-  //           <p class="card-category">24 Hours performance</p>
-  //         </div>
-  //         <div class="card-body">
-  //           <canvas id="chartHours" width="400" height="100"></canvas>
-  //         </div>
-  //         <div class="card-footer">
-  //           <hr>
-  //           <div class="stats">
-  //             <i class="fa fa-history"></i> Updated 3 minutes ago
-  //           </div>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   </div>
-  // `,
+  imports: [NgFor],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
+  partners: any[] = [];
 
-  // ngOnInit(): void {
-  //   // Dados fictícios para o gráfico
-  //   const data = {
-  //     datasets: [{
-  //       data: [10, 20, 30]
-  //   }],
+  constructor(private getservice:GetService){}
 
-  //   // These labels appear in the legend and in the tooltips when hovering different arcs
-  //   labels: [
-  //       'Red',
-  //       'Yellow',
-  //       'Blue'
-  //   ]
-  //   };
+  ngOnInit(): void {
 
-  //   const options: ChartOptions = {
-  //     responsive: true,
-  //     plugins: {
-  //       legend: {
-  //         position: 'top',
-  //       },
-  //       title: {
-  //         display: true,
-  //         text: 'Exemplo de Gráfico de Rosquinha',
-  //       },
-  //     },
-  //   };
+    this.getservice.getAllPartners().subscribe(
+      (data) => {
+        this.partners = data;
+      }
+    );
 
-  //   // Criação do gráfico
-  //   const ctx = document.getElementById('chartDoughnut') as HTMLCanvasElement;
-  //   const chart = new Chart(ctx, {
-  //     type: 'doughnut',
-  //     data: data,
-  //     options: options,
-  //   });
-  // }
+  }
+
 }
