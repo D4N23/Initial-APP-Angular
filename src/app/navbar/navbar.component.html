@@ -1,13 +1,12 @@
-<nav class="navbar text-center">
+<nav class="navbar text-center" style="padding-top: 1rem;">
   <ul class="nav-list">
     <li *ngIf="!isLoggedIn()"><a style="font-weight: bolder;"  routerLink="/home">Home</a></li>
     <li *ngIf="!isLoggedIn()"><a style="font-weight: bolder;" routerLink="/about">About</a></li>
 
-    <li *ngIf="!isLoggedIn()"><a style="font-weight: bolder;" routerLink="/login">Login</a></li>
-    <li *ngIf="!isLoggedIn()"><a style="font-weight: bolder;" routerLink="/register">Register</a></li>
-    <li *ngIf="isLoggedIn()"><a style="font-weight: bolder;" routerLink="/dashboard">Dashboard</a></li>
-    <!-- <li *ngIf="isLoggedIn()"><a style="font-weight: bolder;" routerLink="/edit">Editar dados</a></li> -->
+    <li *ngIf="!isLoggedIn()"><a style="font-weight: bolder; " routerLink="/login">Login</a></li>
+    <li *ngIf="!isLoggedIn()"><a style="font-weight: bolder; " routerLink="/register">Register</a></li>
+    <li *ngIf="isLoggedIn()"><a style="font-weight: bolder; " routerLink="/dashboard">List of Partners</a></li>
 
-    <li *ngIf="isLoggedIn()"><button type="button" class="btn btn-light" style="font-weight: bolder;" (click)="logout()">Logout</button></li>
+    <li *ngIf="isLoggedIn()"><button type="button" class="btn btn-outline-light btn-sm" style="font-weight: bolder; " (click)="logout()">Logout</button></li>
   </ul>
 </nav>

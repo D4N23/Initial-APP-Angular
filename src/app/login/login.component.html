@@ -6,14 +6,14 @@
     <div class="card-body">
       <form (ngSubmit)="onSubmit()">
         <div class="form-group">
-          <label for="usuario" style="font-weight:bolder">E-mail</label>
-          <input id="email" type="email" class="form-control" [(ngModel)]="email" name="email" required/>
+          <label for="usuario" >E-mail</label>
+          <input id="email" type="email" class="form-control text-center" [(ngModel)]="email" name="email" required/>
         </div>
         <div class="form-group">
-          <label for="password" style="font-weight:bolder">Senha</label>
-          <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password" required />
+          <label for="password" >Password</label>
+          <input type="password" class="form-control text-center" id="password" [(ngModel)]="password" name="password" required />
         </div>
-        <button type="submit" class="btn btn-success" style="margin-top: 0.5rem; font-weight:bolder">Entrar</button>
+        <button type="submit" class="btn btn-outline-success btn-lg mt-3">Login</button>
       </form>
     </div>
   </div>

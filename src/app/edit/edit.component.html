@@ -1,16 +1,15 @@
 <div class="container main mt-4 text-center">
   <h1>Edit you informations</h1>
-  <div *ngIf="updateSucess" class="alert alert-success">{{ updateSucess }}</div>
   <div *ngIf="updateError" class="alert alert-danger">{{ updateError }}</div>
   <div class="card">
     <div class="card-body">
       <form (ngSubmit)="updatePartner()">
         <div class="form-group">
-          <label for="firstname">Nome:</label>
+          <label for="firstname">Fist-Name:</label>
           <input type="text" class="form-control" id="firstname" [(ngModel)]="partner.firstname" name="firstname" required>
         </div>
         <div class="form-group">
-          <label for="lastname">Sobrenome:</label>
+          <label for="lastname">Last-Name:</label>
           <input type="text" class="form-control" id="lastname" [(ngModel)]="partner.lastname" name="lastname" required>
         </div>
         <div class="form-group">
@@ -18,13 +17,13 @@
           <input type="text" class="form-control" id="cpf" [(ngModel)]="partner.cpf" name="cpf" required>
         </div>
         <div class="form-group">
-          <label for="partnertype">Tipo de Parceiro</label>
+          <label for="partnertype">Partner-Type</label>
           <select id="partnertype" class="form-control" [(ngModel)]="partner.partnertype" name="partnertype">
             <option value="1">Gold</option>
             <option value="2">Silver</option>
           </select>
         </div>
-        <button type="submit" class="btn btn-primary">Atualizar</button>
+        <button type="submit" class="btn btn-outline-success mt-3">Update</button>
       </form>
     </div>
   </div>

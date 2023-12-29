@@ -1,0 +1,18 @@
+.btn-outline-success {
+  border-width: 3px; /* Ajuste o valor conforme necessário */
+  font-weight: bold;
+}
+
+.btn-outline-success:hover {
+  border-width: 3px; /* Ajuste o valor conforme necessário */
+  font-weight: bold;
+}
+
+label{
+  font-weight: bold;
+  font-size:larger;
+}
+
+
+
+

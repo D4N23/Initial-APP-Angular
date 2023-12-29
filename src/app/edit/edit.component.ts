@@ -1,8 +1,10 @@
 import { NgIf } from '@angular/common';
 import { GetService } from './../services/get/get.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule, NgModel } from '@angular/forms';
+import { DashboardComponent } from '../dashboard/dashboard.component';
+import { MsgService } from '../services/msg/msg.service';
 
 @Component({
   selector: 'app-edit',
@@ -24,7 +26,8 @@ updateSucess: string ='';
 updateError: string = '';
 
 constructor(private activatedRoute: ActivatedRoute,
-            private getService: GetService ){}
+            private getService: GetService, private route: Router,
+            private msgService: MsgService){}
 
   ngOnInit(): void {
 
@@ -46,6 +49,10 @@ constructor(private activatedRoute: ActivatedRoute,
         this.updateSucess = 'Partner Update';
         console.log('Partner Update', response);
         this.updateError = '';
+
+        this.msgService.setUpdateMessage('Partner Update');
+
+        this.route.navigate(['/dashboard']);
       },
       (error) =>{
         this.updateError = 'Partner not updated';

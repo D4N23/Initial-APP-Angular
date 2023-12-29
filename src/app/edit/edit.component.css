@@ -1,0 +1,32 @@
+.btn-outline-success {
+  border-width: 3px; /* Ajuste o valor conforme necessário */
+  font-weight: bold;
+}
+
+.btn-outline-success:hover {
+  border-width: 3px; /* Ajuste o valor conforme necessário */
+  font-weight: bold;
+}
+
+label{
+  margin-top: 2px;
+  margin-bottom: 2px;
+  font-weight: bold;
+  font-size:larger;
+}
+
+option{
+  font-weight: bold;
+  text-align: center;
+}
+
+input{
+
+  text-align: center;
+}
+
+select{
+  font-weight: bold;
+  text-align: center;
+}
+

@@ -6,25 +6,25 @@
     <div class="card-body">
       <form (ngSubmit)="register()">
         <div class="form-group">
-          <label for="firstname">Primeiro Nome</label>
-          <input id="firstname" type="text" class="form-control" [(ngModel)]="formData.firstname" name="firstname" required />
+          <label for="firstname">First-Name:</label>
+          <input id="firstname" type="text" class="form-control  text-center" [(ngModel)]="formData.firstname" name="firstname" required />
         </div>
         <div class="form-group">
-          <label for="lastname">Último Nome</label>
-          <input id="lastname" type="text" class="form-control" [(ngModel)]="formData.lastname" name="lastname" required />
+          <label for="lastname">Last-Name</label>
+          <input id="lastname" type="text" class="form-control  text-center" [(ngModel)]="formData.lastname" name="lastname" required />
         </div>
         <div class="form-group">
           <label for="cpf">CPF</label>
-          <input id="cpf" type="text" class="form-control" [(ngModel)]="formData.cpf" name="cpf" required />
+          <input id="cpf" type="text" class="form-control  text-center" [(ngModel)]="formData.cpf" name="cpf" required />
         </div>
         <div class="form-group">
-          <label for="partnertype">Tipo de Parceiro</label>
-          <select id="partnertype" class="form-control" [(ngModel)]="formData.partnertype" name="partnertype">
+          <label for="partnertype">Partner-Type</label>
+          <select id="partnertype" class="form-control text-center" [(ngModel)]="formData.partnertype" name="partnertype">
             <option value="1">Gold</option>
             <option value="2">Silver</option>
           </select>
         </div>
-        <button type="submit" class="btn btn-primary">Registrar</button>
+        <button type="submit" class="btn btn-outline-success btn-lg mt-3">Register</button>
       </form>
     </div>
   </div>
