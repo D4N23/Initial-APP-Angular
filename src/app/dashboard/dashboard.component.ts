@@ -1,9 +1,7 @@
 import { NgFor } from '@angular/common';
 import { GetService } from './../services/get/get.service';
 import { Component, OnInit } from '@angular/core';
-import { Chart, ChartOptions } from 'chart.js';
 import { Router } from '@angular/router';
-import { HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-dashboard',
@@ -33,30 +31,26 @@ export class DashboardComponent implements OnInit {
     const response = await this.getservice.deletePartnerById(partnerId).toPromise();
 
     if (!response?.body) {
-      // Se o corpo da resposta estiver vazio, considerar como um sucesso
       console.log('Parceiro excluído com sucesso.');
 
-      this.getservice.getAllPartners().subscribe((partners) => {
-        this.partners = partners;
-      });
-
     } else {
-      // Se o corpo da resposta não estiver vazio, exibir uma mensagem de aviso
       console.warn('A resposta contém um corpo inesperado:', response.body);
+
     }
   } catch (error) {
-    // Ocorreu um erro durante a exclusão
     console.error('Erro ao excluir parceiro:', error);
-    // Adicione o tratamento de erro conforme necessário.
+    this.getservice.getAllPartners().subscribe((partners) => {
+      this.partners = partners;
+    });
   }
  }
 
-
   editPartner(partnerId: string) {
-    // Navegar para a página de edição com o ID do parceiro
     this.route.navigate(['/edit', partnerId]);
   }
 
-
+  getPartnerTypeLabel(partnerType: number): string {
+    return partnerType === 1 ? 'Gold' : (partnerType === 2 ? 'Silver' : 'Unknown');
+  }
 
 }
