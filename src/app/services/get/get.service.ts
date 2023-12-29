@@ -1,5 +1,5 @@
 import { ConfigService } from './../config/config.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -24,6 +24,11 @@ export class GetService {
   updatePartner(id:string, partnerData: any): Observable<any>{
     const apiUrl = `${this.configService.apiUrl}partners/${id}`;
     return this.http.put(apiUrl, partnerData);
+  }
+
+  deletePartnerById(id: string): Observable<HttpResponse<any>>{
+    const apiUrl = `${this.configService.apiUrl}partners/${id}`;
+    return this.http.delete(apiUrl, {observe: 'response'});
   }
 
 }

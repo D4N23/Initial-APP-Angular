@@ -19,7 +19,10 @@
             <td>{{ partner.lastname }}</td>
             <td>{{ partner.cpf }}</td>
             <td>
-              <button (click)="editPartner(partner.idpartner)">Editar</button>
+             <button (click)="editPartner(partner.idpartner)">Editar</button>
+            </td>
+            <td>
+              <button (click)="deletePartnerById(partner.idpartner)">Deletar</button>
             </td>
           </tr>
         </tbody>
