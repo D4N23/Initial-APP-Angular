@@ -17,7 +17,7 @@ partnerId: string = '';
 partner: any ={
   firstname: '',
       lastname: '',
-      partnertype: 1,
+      partnertype: '',
       cpf: ''
 };
 updateSucess: string ='';

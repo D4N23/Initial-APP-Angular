@@ -15,7 +15,7 @@ export class RegisterComponent {
     formData : any = {
       firstname: '',
       lastname: '',
-      partnertype: 1,
+      partnertype: '',
       cpf: ''
     }
 

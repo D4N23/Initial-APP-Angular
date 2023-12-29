@@ -24,7 +24,6 @@ import { FormsModule } from "@angular/forms";
     HttpClientModule,
     LoginModule,
     FormsModule,
-    // ChartModule,
     RouterModule.forRoot(routes),
 
 

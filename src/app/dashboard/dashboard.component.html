@@ -18,6 +18,7 @@
             <td>{{ partner.firstname }}</td>
             <td>{{ partner.lastname }}</td>
             <td>{{ partner.cpf }}</td>
+            <td>{{ getPartnerTypeLabel(partner.partnertype) }}</td>
             <td>
              <button (click)="editPartner(partner.idpartner)">Editar</button>
             </td>

@@ -17,6 +17,13 @@
           <label for="cpf">CPF</label>
           <input id="cpf" type="text" class="form-control" [(ngModel)]="formData.cpf" name="cpf" required />
         </div>
+        <div class="form-group">
+          <label for="partnertype">Tipo de Parceiro</label>
+          <select id="partnertype" class="form-control" [(ngModel)]="formData.partnertype" name="partnertype">
+            <option value="1">Gold</option>
+            <option value="2">Silver</option>
+          </select>
+        </div>
         <button type="submit" class="btn btn-primary">Registrar</button>
       </form>
     </div>
