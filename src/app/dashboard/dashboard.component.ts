@@ -28,20 +28,27 @@ export class DashboardComponent implements OnInit {
     );
   }
 
- deletePartnerById(partnerId: string){
-      this.getservice.deletePartnerById(partnerId).subscribe(
-        (response: HttpResponse<any>)=>{
-          console.log('Partner desativado');
+ async deletePartnerById(partnerId: string){
+  try {
+    const response = await this.getservice.deletePartnerById(partnerId).toPromise();
 
-          const index = this.partners.findIndex((p)=> p.idpartner === partnerId);
-          if(index !== -1){
-            this.partners.splice(index, 1);
-          }
-        },
-        (error) =>{
-          console.error('Erro', error);
-        }
-      )
+    if (!response?.body) {
+      // Se o corpo da resposta estiver vazio, considerar como um sucesso
+      console.log('Parceiro excluído com sucesso.');
+
+      this.getservice.getAllPartners().subscribe((partners) => {
+        this.partners = partners;
+      });
+
+    } else {
+      // Se o corpo da resposta não estiver vazio, exibir uma mensagem de aviso
+      console.warn('A resposta contém um corpo inesperado:', response.body);
+    }
+  } catch (error) {
+    // Ocorreu um erro durante a exclusão
+    console.error('Erro ao excluir parceiro:', error);
+    // Adicione o tratamento de erro conforme necessário.
+  }
  }
 
 
