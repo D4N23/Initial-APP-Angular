@@ -6,7 +6,7 @@
     <li *ngIf="!isLoggedIn()"><a style="font-weight: bolder;" routerLink="/login">Login</a></li>
     <li *ngIf="!isLoggedIn()"><a style="font-weight: bolder;" routerLink="/register">Register</a></li>
     <li *ngIf="isLoggedIn()"><a style="font-weight: bolder;" routerLink="/dashboard">Dashboard</a></li>
-    <li *ngIf="isLoggedIn()"><a style="font-weight: bolder;" routerLink="/edit">Editar dados</a></li>
+    <!-- <li *ngIf="isLoggedIn()"><a style="font-weight: bolder;" routerLink="/edit">Editar dados</a></li> -->
 
     <li *ngIf="isLoggedIn()"><button type="button" class="btn btn-light" style="font-weight: bolder;" (click)="logout()">Logout</button></li>
   </ul>

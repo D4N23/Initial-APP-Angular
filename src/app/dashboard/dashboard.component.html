@@ -18,6 +18,9 @@
             <td>{{ partner.firstname }}</td>
             <td>{{ partner.lastname }}</td>
             <td>{{ partner.cpf }}</td>
+            <td>
+              <button (click)="editPartner(partner.idpartner)">Editar</button>
+            </td>
           </tr>
         </tbody>
       </table>

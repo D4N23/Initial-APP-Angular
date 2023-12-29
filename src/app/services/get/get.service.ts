@@ -15,4 +15,15 @@ export class GetService {
     const apiUrl = `${this.configService.apiUrl}partners`;
     return this.http.get<any[]>(apiUrl);
   }
+
+  getPartnerById(id: string): Observable<any>{
+    const apiUrl = `${this.configService.apiUrl}partners/${id}`;
+    return this.http.get(apiUrl);
+  }
+
+  updatePartner(id:string, partnerData: any): Observable<any>{
+    const apiUrl = `${this.configService.apiUrl}partners/${id}`;
+    return this.http.put(apiUrl, partnerData);
+  }
+
 }
