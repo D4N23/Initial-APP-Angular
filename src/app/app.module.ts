@@ -10,6 +10,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { ChartModule } from "angular2-chartjs";
 import { RegisterComponent } from "./register/register.component";
 import { FormsModule } from "@angular/forms";
+import { IonicModule } from '@ionic/angular';
+import { provideIonicAngular } from '@ionic/angular/standalone';
 
 
 @NgModule({
@@ -25,6 +27,7 @@ import { FormsModule } from "@angular/forms";
     LoginModule,
     FormsModule,
     RouterModule.forRoot(routes),
+    IonicModule.forRoot({}),
 
 
   ],
@@ -33,6 +36,9 @@ import { FormsModule } from "@angular/forms";
   ],
   exports:[
 
+  ],
+  providers: [
+    provideIonicAngular({})
   ]
 })
 
